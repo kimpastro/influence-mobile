@@ -6,6 +6,6 @@ class Player < ApplicationRecord
   validates_presence_of :birthday
 
   def age
-    Age.from(birtday)
+    Age.from(birthday)
   end
 end

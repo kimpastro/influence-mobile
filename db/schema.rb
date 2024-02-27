@@ -16,8 +16,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_27_203028) do
 
   create_table "offers", force: :cascade do |t|
     t.integer "gender", null: false
-    t.integer "min_age", default: 0, null: false
-    t.integer "max_age", default: 199, null: false
+    t.integer "age", default: 0, null: false
     t.text "description", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

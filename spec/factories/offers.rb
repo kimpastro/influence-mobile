@@ -4,13 +4,11 @@ FactoryBot.define do
     description { Faker::Marketing.buzzwords }
 
     trait :for_legal_age do
-      min_age { 21 }
-      max_age { 199 }
+      age { 21 }
     end
 
     trait :for_minors do
-      min_age { 0 }
-      max_age { 20 }
+      age { 10 }
     end
 
     trait :for_men do

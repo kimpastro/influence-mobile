@@ -5,21 +5,20 @@ RSpec.describe Offer, type: :model do
   let(:attributes) do
     {
       gender: Offer.genders[:male],
-      min_age: 0,
-      max_age: 199,
+      age: 0,
       description: Faker::Marketing.buzzwords,
     }
   end
 
-  describe "attributes validations" do
+  describe "validations" do
     context 'when attributes are good' do
       it 'should be valid' do
         expect(offer).to be_valid
       end
     end
 
-    context 'when min_age is missing' do
-      let(:attributes) { super().merge!(min_age: nil) }
+    context 'when age is missing' do
+      let(:attributes) { super().merge!(age: nil) }
 
       it 'should not be valid' do
         expect(offer).to_not be_valid
@@ -28,23 +27,8 @@ RSpec.describe Offer, type: :model do
       it 'should has error message' do
         offer.valid?
 
-        expect(offer.errors).to have_key(:min_age)
-        expect(offer.errors[:min_age]).to eq(["can't be blank"])
-      end
-    end
-
-    context 'when max_age is missing' do
-      let(:attributes) { super().merge!(max_age: nil) }
-
-      it 'should not be valid' do
-        expect(offer).to_not be_valid
-      end
-
-      it 'should has error message' do
-        offer.valid?
-
-        expect(offer.errors).to have_key(:max_age)
-        expect(offer.errors[:max_age]).to eq(["can't be blank"])
+        expect(offer.errors).to have_key(:age)
+        expect(offer.errors[:age]).to eq(["can't be blank"])
       end
     end
 
