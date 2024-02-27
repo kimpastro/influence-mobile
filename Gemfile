@@ -19,6 +19,12 @@ group :development, :test do
   gem "pry-byebug"
   gem "faker", "~> 3.2"
   gem "dotenv-rails", "~> 3.1"
+  gem "factory_bot_rails", "~> 6.4"
+  gem 'rspec-rails', '~> 6.1', '>= 6.1.1'
+end
+
+group :development do
+  gem 'letter_opener', '~> 1.9'
 end
 
 gem "devise", "~> 4.9"

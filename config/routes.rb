@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   devise_for :players
-  root to: "home#index"
+
+  root to: "offers#index"
 end
