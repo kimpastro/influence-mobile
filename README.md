@@ -36,7 +36,7 @@ make up
 ```
 
 Access:
-`https://localhost:3000`
+`http://localhost:3000`
 
 Stop the application:
 ```sh
