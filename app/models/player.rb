@@ -4,7 +4,7 @@ class Player < ApplicationRecord
   LEGAL_AGE = 21.freeze
 
   has_many :claimed_offers
-  has_many :offers, through: :claimed_offers
+  has_many :offers, through: :claimed_offers, dependent: :destroy
 
   validates_presence_of :birthday
 

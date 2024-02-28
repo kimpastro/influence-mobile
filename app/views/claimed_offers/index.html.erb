@@ -1,9 +1,3 @@
-<div class="flex flex-col">
-  <p>Claimed offers:</p>
-
-  <% @claimed_offers.each do |offer| %>
-    <p><%= offer.id %> Age:<%= offer.age %> - Gender: <%= offer.gender %> </p>
-  <% end %>
+<div class="flex flex-row justify-center">
+  <%= render partial: 'offers/list', locals: { offers: @claimed_offers, title: 'Claimed Offers', pagy: @pagy_claimed, claimed: true } %>
 </div>
-
-<%== pagy_nav(@pagy_claimed) if @pagy_claimed.pages > 1 %>

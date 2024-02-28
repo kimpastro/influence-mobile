@@ -1,0 +1,13 @@
+<% claimed ||= false %>
+
+<div class="flex flex-col gap-y-4 bg-blue-50 rounded p-5 max-w-2xl flex-1 min-w-lg">
+  <p class="text-xl font-semibold text-center mb-4 border-b-2 pb-2"><%= title %></p>
+
+  <% offers.each do |offer| %>
+    <%= render offer, claimed: claimed %>
+  <% end %>
+
+  <div class="flex justify-center gap-x-2">
+    <%== pagy_nav(pagy) if pagy.pages > 1 %> 
+  </div>
+</div>

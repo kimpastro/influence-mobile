@@ -1,4 +1,12 @@
-<div class="flex">
-  <p><%= offer.id %> Age:<%= offer.age %> - Gender: <%= offer.gender %> </p>
-  <%= button_to 'Claim', claimed_offers_path(offer, params: { offer_id: offer.id }), method: :post, class: 'bg-red-300 p-2 rounded' %>
+<div class="flex flex-row justify-between items-center shadow bg-white rounded p-3">
+  <div class="flex flex-col gap-y-1">
+    <span class="text-sm font-semibold text-brown"># <%= offer.id %></span>
+    <span><%= offer.description.humanize %></span>
+  </div>
+
+  <% unless claimed %>
+    <div>
+      <%= button_to 'Claim Offer', claimed_offers_path(offer, params: { offer_id: offer.id }), method: :post, class: 'bg-green-400 p-2 rounded font-semibold text-sm' %>
+    </div>
+  <% end %>
 </div>

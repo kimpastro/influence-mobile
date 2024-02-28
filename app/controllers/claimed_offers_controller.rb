@@ -1,5 +1,6 @@
 class ClaimedOffersController < ApplicationController
   before_action :find_offer, only: [:create]
+
   def index
     @pagy_claimed, @claimed_offers = pagy(current_player.offers)
   end

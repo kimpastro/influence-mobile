@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>InfluenceMobile</title>
+    <title>Influence Mobile</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,8 +12,13 @@
   </head>
 
   <body>
+    <% if player_signed_in? %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+  
+    <%= render 'shared/flash' %>
+
     <main class="container mx-auto mt-4 px-5">
-      <%= render 'shared/flash' %>
       <%= yield %>
     </main>
   </body>
