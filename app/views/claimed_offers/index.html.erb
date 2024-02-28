@@ -1,0 +1,9 @@
+<div class="flex flex-col">
+  <p>Claimed offers:</p>
+
+  <% @claimed_offers.each do |offer| %>
+    <p><%= offer.id %> Age:<%= offer.age %> - Gender: <%= offer.gender %> </p>
+  <% end %>
+</div>
+
+<%== pagy_nav(@pagy_claimed) if @pagy_claimed.pages > 1 %>

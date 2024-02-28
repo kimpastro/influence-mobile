@@ -1,1 +1,31 @@
-All offers goes here <%= current_player.name %>
+<div class="flex">
+  <div><%= link_to 'Claimed ones', claimed_offers_path, class: 'bg-blue-400 p-2 rounded' %></div>
+</div>
+
+<div class="flex flex-col">
+  <p>Claimed offers:</p>
+
+  <% @claimed_offers.each do |offer| %>
+    <%= render offer %>
+  <% end %>
+  <%== pagy_nav(@pagy_claimed) if @pagy_claimed.pages > 1 %> 
+</div>
+
+<div class="flex flex-col">
+  <p>Offers for you:</p>
+
+  <% @targeted_offers.each do |offer| %>
+    <%= render offer %>
+  <% end %>
+  <%== pagy_nav(@pagy_targeted) if @pagy_targeted.pages > 1 %> 
+</div>
+  
+<div class="flex flex-col">
+  <p>May interest you:</p>
+  
+  <% @may_interest_offers.each do |offer| %>
+    <%= render offer %>
+  <% end %>
+  <%== pagy_nav(@pagy_may_interest) if @pagy_may_interest.pages > 1 %>
+</div>
+

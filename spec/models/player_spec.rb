@@ -55,4 +55,35 @@ RSpec.describe Player, type: :model do
       expect(described_class.genders).to eq( { "male" => 1, "female" => 2 } )
     end
   end
+
+  describe 'methods' do
+    context '#minor?' do
+      let(:attributes) { super().merge(birthday: birthday) }
+      let(:birthday) { age.years.ago - 1.day }
+
+      context 'when age under 21' do
+        let(:age) { 19 }
+
+        it 'should be a minor' do
+          expect(player).to be_minor
+        end
+      end
+
+      context 'when age equal 21' do
+        let(:age) { 21 }
+
+        it 'should not be a minor' do
+          expect(player).to_not be_minor
+        end
+      end
+
+      context 'when age above 21' do
+        let(:age) { 25 }
+
+        it 'should not be a minor' do
+          expect(player).to_not be_minor
+        end
+      end
+    end
+  end
 end

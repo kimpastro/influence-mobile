@@ -10,7 +10,6 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
-# gem "redis", ">= 4.0.1"
 gem "bcrypt", "~> 3.1.7"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
@@ -28,3 +27,4 @@ group :development do
 end
 
 gem "devise", "~> 4.9"
+gem "pagy", "~> 7.0"

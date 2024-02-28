@@ -24,7 +24,7 @@ module InfluenceMobile
     config.autoload_lib(ignore: %w(assets tasks))
 
     config.time_zone = "UTC"
-    # config.eager_load_paths << Rails.root.join("extras")
+    # config.eager_load_paths << Rails.root.join("services")
 
     config.generators.system_tests = nil
   end

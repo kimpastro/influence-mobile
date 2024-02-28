@@ -1,0 +1,4 @@
+<div class="flex">
+  <p><%= offer.id %> Age:<%= offer.age %> - Gender: <%= offer.gender %> </p>
+  <%= button_to 'Claim', claimed_offers_path(offer, params: { offer_id: offer.id }), method: :post, class: 'bg-red-300 p-2 rounded' %>
+</div>

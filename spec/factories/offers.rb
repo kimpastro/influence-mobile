@@ -8,7 +8,7 @@ FactoryBot.define do
     end
 
     trait :for_minors do
-      age { 10 }
+      age { 15 }
     end
 
     trait :for_men do

@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_27_203028) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_27_221637) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "claimed_offers", force: :cascade do |t|
+    t.bigint "player_id", null: false
+    t.bigint "offer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["offer_id"], name: "index_claimed_offers_on_offer_id"
+    t.index ["player_id"], name: "index_claimed_offers_on_player_id"
+  end
 
   create_table "offers", force: :cascade do |t|
     t.integer "gender", null: false
@@ -46,4 +55,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_27_203028) do
     t.index ["unlock_token"], name: "index_players_on_unlock_token", unique: true
   end
 
+  add_foreign_key "claimed_offers", "offers"
+  add_foreign_key "claimed_offers", "players"
 end
