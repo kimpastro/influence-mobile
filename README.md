@@ -11,16 +11,11 @@ In order to install you must run:
 bin/setup
 ```
 
-To create some offers and a initial user, run:
+To create some offers and an initial user, run:
 ```sh
 bin/rails db:seed
 ```
 It will print out valid credentials so you can access the system.
-
-## Running the project:
-
-> Duplicate or rename the `.env.example` to `.env.development.local` and change the `DATABASE_URL` value to match with your already installed postgresql database running locally.
-
 
 To start the server:
 ```sh
@@ -31,24 +26,24 @@ Now access:
 `http://localhost:3000`
 
 
-## Running it with docker
+## Running it with docker-compose
 
-> You need docker-compose installed locally.
+> You need docker-compose installed into your machine
 
-Running the application:
+Start the application:
 ```sh
 make up
 ```
 
-And access:
+Access:
 `https://localhost:3000`
 
-Stopping the application:
+Stop the application:
 ```sh
 make stop
 ```
 
-Cleaning up:
+Cleaning up things (Remove containers, images and volumes):
 ```
 make clean
 ```
