@@ -3,6 +3,8 @@ As this project has no intent on going to production, follow the instructions to
 
 ## Running it locally
 
+> Make sure you have postgres up and running into your machine
+> and adjust the .env.development DATABASE_URL values to match you local postgres credentials
 In order to install you must run:
 ```sh
 bin/setup
